@@ -21,5 +21,5 @@ function showSlide(i) {
 setInterval(() => {
     index = (index + 1) % slides.length;
     showSlide(index);
-}, 4000);
+}, 4500);
 
