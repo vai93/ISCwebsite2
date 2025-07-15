@@ -75,7 +75,18 @@ html {
   animation: slideUpText 1s ease forwards;
   animation-delay: 0.6s;
   opacity: 0;
-  font-size: 5vw;
+  font-size: 4.5vw;
+  color: white;
+  text-align: center;
+  margin: 20px 0;
+}
+
+.text-box h4 {
+  font-weight: bold;
+  animation: slideUpText 1s ease forwards;
+  animation-delay: 0.6s;
+  opacity: 0;
+  font-size: 4.5vw;
   color: white;
   text-align: center;
   margin: 20px 0;
@@ -132,7 +143,11 @@ html {
 /* --- Responsive Styles --- */
 @media (max-width: 1024px) {
   .text-box h3 {
-    font-size: 7vw;
+    font-size: 7vw !important;
+  }
+
+  .text-box h4 {
+    font-size: 4vw;
   }
 
   .text-box p:first-of-type,
@@ -144,6 +159,10 @@ html {
 @media (max-width: 768px) {
   .text-box h3 {
     font-size: 8vw;
+  }
+
+   .text-box h4 {
+    font-size: 5vw !important;
   }
 
   .text-box p:first-of-type,
@@ -162,6 +181,10 @@ html {
     font-size: 9vw;
   }
 
+  .text-box h4 {
+    font-size: 6vw !important;
+  }
+
   .text-box p:first-of-type,
   .text-box p:last-of-type {
     font-size: 0.85rem;
@@ -172,3 +195,16 @@ html {
     font-size: 0.85rem;
   }
 }
+
+.highlight {
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 4.5vw;
+  background: #fa7e7e;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+

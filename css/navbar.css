@@ -62,6 +62,7 @@ body {
 .navbar-nav {
   display: flex;
   align-items: center;
+  margin-left: 190px !important;
 }
 
 .nav-link {
@@ -108,7 +109,7 @@ body {
 
 .cta-icons .nav-link {
   font-size: 20px;
-  color: #000 !important;
+  color: #ffffff !important;
   transition: 0.2s ease;
 }
 
@@ -128,6 +129,7 @@ body {
   .navbar-nav {
     flex-direction: column;
     align-items: center;
+    margin-left: 2px !important;
     width: 100%;
   }
 
@@ -191,4 +193,10 @@ body {
     flex-direction: row;
     margin-left: auto;
   }
+}
+.right-logo {
+  height: 45px;
+  margin-left: 15px;
+  border-radius: 8px;
+  margin-top: 10px;
 }
