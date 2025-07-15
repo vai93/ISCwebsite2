@@ -62,7 +62,7 @@ body {
 .navbar-nav {
   display: flex;
   align-items: center;
-  margin-left: 190px !important;
+  margin-left: 110px !important;
 }
 
 .nav-link {
