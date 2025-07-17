@@ -1,12 +1,5 @@
-body {
-  margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
-  min-height: 100vh;
-}
-
 .custom-navbar {
-  position: fixed;
+  position: fixed !important;
   top: 0;
   left: 0;
   right: 0;
@@ -62,7 +55,7 @@ body {
 .navbar-nav {
   display: flex;
   align-items: center;
-  margin-left: 110px !important;
+  margin-left: 150px !important;
 }
 
 .nav-link {
@@ -193,10 +186,10 @@ body {
     flex-direction: row;
     margin-left: auto;
   }
+  .custom-navbar {
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  margin-left: -20px !important;
+
 }
-.right-logo {
-  height: 45px;
-  margin-left: 15px;
-  border-radius: 8px;
-  margin-top: 10px;
 }

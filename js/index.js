@@ -58,3 +58,28 @@ function animateCounter(el) {
     if (current === target) clearInterval(timer);
   }, stepTime);
 }
+
+const cards = document.querySelectorAll('.info-card-alt');
+
+  // Add data-index attributes for staggered delay
+  cards.forEach((card, index) => {
+    card.setAttribute('data-index', index + 5);
+  });
+
+  const observer = new IntersectionObserver(
+    entries => {
+      entries.forEach(entry => {
+        const el = entry.target;
+        if (entry.isIntersecting) {
+          el.classList.remove('in-view'); // Reset animation
+          void el.offsetWidth; // Force reflow to restart animation
+          el.classList.add('in-view');
+        }
+      });
+    },
+    {
+      threshold: 0.3,
+    }
+  );
+
+  cards.forEach(card => observer.observe(card));

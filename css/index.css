@@ -197,7 +197,6 @@ html {
 }
 
 .highlight {
-  font-family: 'Segoe UI', sans-serif;
   font-size: 4.5vw;
   background: #fa7e7e;
   -webkit-background-clip: text;
@@ -207,4 +206,184 @@ html {
   letter-spacing: 1px;
 }
 
+/* ----------------------------- Info Section Alt Styling ----------------------------- */
+
+:root {
+  --teal-bg: #007e8c;
+  --panel-bg: #e3f2f5;
+  --white: #ffffff;
+  --overlay-dark: #005073;
+  --highlight-blue: #c6e6f0;
+  --glow-yellow: #f2d675;
+  --text-dark: #333333;
+
+  --transition-fast: 0.2s ease;
+  --transition-med: 0.4s ease;
+  --transition-slow: 0.8s ease;
+  --shadow-dark: rgba(0,0,0,0.2);
+  --shadow-light: rgba(255,255,255,0.3);
+}
+
+:root {
+  --bg-gradient: linear-gradient(to right, #b79891, #94716b); 
+  --card-bg: rgba(255, 255, 255, 0.85);
+  --hover-bg: rgba(255, 255, 255, 0.95);
+  --accent-color: #94716b;
+  --border-color: #cdbab1;
+  --shadow-color: rgba(0, 0, 0, 0.08);
+  --shadow-dark: rgba(0, 0, 0, 0.25);
+  --shadow-light: rgba(255, 255, 255, 0.3);
+  --text-primary: #2e1e17;
+  --text-secondary: #5c4b43;
+  --link-hover: #b79891;
+  --transition-fast: 0.3s ease;
+  --transition-med: 0.45s ease;
+  --transition-slow: 0.8s ease;
+}
+
+body {
+background: linear-gradient(to right, #c4c3d0, #b0c4de);
+  margin: 0;
+  padding: 0;
+}
+
+.info-section-alt {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 80px auto;
+  padding: 0 20px;
+  text-align: center;
+  flex-wrap: wrap;
+  perspective: 1000px;
+}
+
+.info-card-alt {
+  flex: 1;
+  background: var(--card-bg);
+  border-radius: 20px;
+  padding: 50px 30px;
+  box-shadow: 0 8px 20px var(--shadow-color);
+  border: 1px solid var(--border-color);
+  transform-style: preserve-3d;
+  transform: rotateX(6deg) translateZ(0);
+  opacity: 0;
+}
+
+.info-card-alt.in-view {
+  animation: fadeIn3D var(--transition-slow) forwards;
+}
+
+.info-card-alt[data-index='1'].in-view { animation-delay: 0.2s; }
+.info-card-alt[data-index='2'].in-view { animation-delay: 0.4s; }
+.info-card-alt[data-index='3'].in-view { animation-delay: 0.6s; }
+
+@keyframes fadeIn3D {
+  from {
+    transform: rotateX(-15deg) translateY(50px) translateZ(-200px);
+    opacity: 0;
+  }
+  to {
+    transform: rotateX(0) translateY(0) translateZ(0);
+    opacity: 1;
+  }
+}
+ 
+
+.info-card-alt:hover {
+  transform: rotateX(0) translateY(-10px) translateZ(40px) scale(1.03);
+  box-shadow:
+    0 20px 40px var(--shadow-dark),
+    inset 0 2px 0 var(--shadow-light);
+  transition: transform var(--transition-med), box-shadow var(--transition-med), background var(--transition-fast);
+}
+
+.card-icon-alt {
+  width: 70px;
+  height: 70px;
+  background: #e9d4c8;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 25px;
+  box-shadow: 0 4px 8px var(--shadow-color);
+  transition: transform var(--transition-fast), background var(--transition-fast);
+}
+
+.info-card-alt:hover .card-icon-alt {
+  transform: scale(1.1) translateZ(20px);
+  background: #d1b5a3;
+}
+
+.info-icon-alt {
+  font-size: 2rem;
+  color: var(--accent-color);
+}
+
+.info-card-alt h3 {
+  font-size: 1.8rem;
+  color: var(--text-primary);
+  margin-bottom: 15px;
+  font-weight: 600;
+  transition: color var(--transition-fast);
+}
+.info-card-alt:hover h3 {
+  color: var(--link-hover);
+}
+
+.info-card-alt p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  margin-bottom: 20px;
+  transition: color var(--transition-fast);
+}
+.info-card-alt:hover p {
+  color: var(--text-primary);
+}
+
+.info-link-alt {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 25px;
+  border: 1.5px solid var(--accent-color);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--accent-color);
+  background: transparent;
+  transition: all var(--transition-fast);
+}
+.info-card-alt:hover .info-link-alt {
+  background: var(--accent-color);
+  color: #fff;
+  border-color: var(--accent-color);
+}
+
+@media (max-width: 992px) {
+  .info-section-alt {
+    flex-direction: column;
+  }
+  .info-card-alt {
+    margin-bottom: 30px;
+  }
+}
+
+@media (max-width: 576px) {
+  .info-card-alt {
+    padding: 35px 20px;
+  }
+  .info-card-alt h3 {
+    font-size: 1.5rem;
+  }
+  .info-card-alt p {
+    font-size: 0.9rem;
+  }
+  .info-link-alt {
+    font-size: 0.85rem;
+    padding: 8px 16px;
+  }
+}
 
