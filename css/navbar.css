@@ -186,10 +186,11 @@
     flex-direction: row;
     margin-left: auto;
   }
-  .custom-navbar {
-  flex-wrap: nowrap;
-  justify-content: space-between;
-  margin-left: -20px !important;
 
-}
+  .custom-navbar {
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    margin-left: -20px !important;
+
+  }
 }
