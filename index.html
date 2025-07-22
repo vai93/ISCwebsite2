@@ -16,41 +16,63 @@
 
   <!-----------------------------------------------Navbar Section --------------------------------------------------------->
 
-  <nav class="navbar navbar-expand-lg custom-navbar">
-    <div class="container-fluid">
-      <a class="navbar-brand d-flex align-items-center" href="#">
-        <img src="images/logo1.png" class="brand-logo me-2" alt="Logo" />
-        <div class="brand-text">
-          Indian Switchgears<br />
-          and Consultants
-        </div>
-      </a>
+<nav class="navbar navbar-expand-lg custom-navbar">
+  <div class="container-fluid">
+    <!-- LEFT: Main Brand -->
+    <a class="navbar-brand d-flex align-items-center brand-left" href="#">
+      <img src="images/logo1.png" class="brand-logo me-2" alt="Logo" />
+      <div class="brand-text">
+        Indian Switchgears<br />
+        and Consultants
+      </div>
+    </a>
 
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
-        <span class="navbar-toggler-icon">
-          <i class="fas fa-bars text-white"></i>
-        </span>
-      </button>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#mainNavbar"
+      aria-controls="mainNavbar"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon">
+        <i class="fas fa-bars text-white"></i>
+      </span>
+    </button>
 
-      <div class="collapse navbar-collapse" id="mainNavbar">
-        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
-          <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">About</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Products</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Clients</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Career</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Gallery</a></li>
-        </ul>
+    <div class="collapse navbar-collapse justify-content-center" id="mainNavbar">
+      <ul class="navbar-nav nav-center">
+        <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Products</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Clients</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Career</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Gallery</a></li>
+      </ul>
 
-        <ul class="cta-icons">
-          <li><a class="nav-link" href="#"><i class="fas fa-phone"></i></a></li>
-          <li><a class="nav-link" href="#"><i class="fas fa-envelope"></i></a></li>
-          <li><a class="nav-link" href="#"><i class="fas fa-download"></i></a></li>
-        </ul>
+      <ul class="cta-icons nav-center-icons list-unstyled mb-0">
+        <li><a class="nav-link" href="#"><i class="fas fa-phone"></i></a></li>
+        <li><a class="nav-link" href="#"><i class="fas fa-envelope"></i></a></li>
+        <li><a class="nav-link" href="#"><i class="fas fa-download"></i></a></li>
+      </ul>
+
+      <div class="collapse-logo">
+        <img src="images/rightLogo.jpeg" class="right-logo-collapse" alt="Right Logo" />
       </div>
     </div>
-  </nav>
+
+    <div class="d-flex align-items-center brand-right desktop-only">
+      <ul class="cta-icons list-unstyled mb-0">
+        <li><a class="nav-link" href="#"><i class="fas fa-phone"></i></a></li>
+        <li><a class="nav-link" href="#"><i class="fas fa-envelope"></i></a></li>
+        <li><a class="nav-link" href="#"><i class="fas fa-download"></i></a></li>
+      </ul>
+      <img src="images/rightLogo.jpeg" class="right-logo me-3" alt="Right Logo" />
+    </div>
+  </div>
+</nav>
 
 
   <div class="slider">
@@ -85,17 +107,14 @@
 
 
   <!-- ----------------------------- About Section ----------------------------- -->
-  <!-- ABOUT SECTION -->
   <section class="about-section" id="about">
     <div class="centered-title animate-bottom">
       <h1>About ICS</h1>
     </div>
 
     <div class="container">
-      <!-- IMAGE & ELECTRIC DECORATION -->
       <div class="about-image-wrap animate-left">
         <div class="animated-dots">
-          <!-- 16 dots -->
           <span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span>
           <span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span>
           <span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span>
@@ -108,7 +127,6 @@
         <img src="images/ele.jpg" alt="Precision Welding" class="about-img" />
       </div>
 
-      <!-- TEXT CONTENT -->
       <div class="about-content animate-right">
         <h2 class="about-title">Powering Industry with Precision for 45+ Years</h2>
         <p class="about-text">
@@ -118,47 +136,28 @@
         </p>
         <p class="about-text">
           Founded by a technocrat with deep field experience in India and abroad, ISC stands for
-          engineering excellence, quality manufacturing, and long-term customer trust.
-          At ISC, we believe an electrical panel is the core of any system—and its design demands both
+          engineering excellence, quality manufacturing, and long-term customer trust. At ISC, we
+          believe an electrical panel is the core of any system—and its design demands both
           technical precision and creative insight.
         </p>
-        <p class="about-text">
-          Our recent recognition as a SIEPAN ELITE Technology Partner of Siemens Ltd. further
-          strengthens our position as a forward-thinking, future-ready organization.
-        </p>
-        <ul class="about-features">
-          <li><i class="fas fa-check-circle"></i> 45+ years of precision engineering</li>
-          <li><i class="fas fa-certificate"></i> ISO 9001:2015 certified</li>
-          <li><i class="fas fa-cogs"></i> ERP‑driven, transparent operations</li>
-          <li><i class="fas fa-handshake"></i> SIEPAN ELITE Technology Partner of Siemens</li>
-        </ul>
-        <a href="#contact" class="btn about-btn">Learn More</a>
+
+        <div class="about-more" id="aboutMore">
+          <p class="about-text">
+            Our recent recognition as a SIEPAN ELITE Technology Partner of Siemens Ltd. further
+            strengthens our position as a forward-thinking, future-ready organization.
+          </p>
+          <ul class="about-features">
+            <li><i class="fas fa-check-circle"></i> 45+ years of precision engineering</li>
+            <li><i class="fas fa-certificate"></i> ISO 9001:2015 certified</li>
+            <li><i class="fas fa-cogs"></i> ERP‑driven, transparent operations</li>
+            <li><i class="fas fa-handshake"></i> SIEPAN ELITE Technology Partner of Siemens</li>
+          </ul>
+        </div>
+
+        <a href="#about" class="btn about-btn" id="learnMoreBtn">Learn More</a>
       </div>
     </div>
   </section>
-
-
-
-
-
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      const animatedItems = document.querySelectorAll('.animate-left, .animate-right, .animate-bottom');
-
-      const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('animate-visible');
-          } else {
-            entry.target.classList.remove('animate-visible');
-          }
-        });
-      }, { threshold: 0.3 });
-
-      animatedItems.forEach(item => observer.observe(item));
-    });
-
-  </script>
 
 
   <script src="js/index.js"></script>

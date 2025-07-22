@@ -1,4 +1,3 @@
-// helper to animate a single counter element from 0 → its data-target
 function animateCounter(el) {
   const target = +el.getAttribute('data-target');
   const duration = 1500; // total ms
@@ -11,7 +10,6 @@ function animateCounter(el) {
   }, stepTime);
 }
 
-// wrap showSlide to also trigger count-up on the third slide
 const slides = document.querySelectorAll('.slide');
 let index = 0;
 
@@ -34,7 +32,6 @@ function showSlide(i) {
     el.style.animation = '';
   });
 
-  // if this is the 3rd slide (index 2), kick off each counter
   if (i === 2) {
     textBox.querySelectorAll('.counter').forEach(animateCounter);
   }
@@ -58,3 +55,30 @@ function animateCounter(el) {
     if (current === target) clearInterval(timer);
   }, stepTime);
 }
+
+document.addEventListener('DOMContentLoaded', function () {
+      const animatedItems = document.querySelectorAll(
+        '.animate-left, .animate-right, .animate-bottom'
+      );
+      const observer = new IntersectionObserver(
+        entries => {
+          entries.forEach(entry =>
+            entry.target.classList.toggle('animate-visible', entry.isIntersecting)
+          );
+        },
+        { threshold: 0.3 }
+      );
+      animatedItems.forEach(item => observer.observe(item));
+
+      // Learn More toggle
+      const more = document.getElementById('aboutMore');
+      const btn = document.getElementById('learnMoreBtn');
+      let open = false;
+      btn.addEventListener('click', e => {
+        e.preventDefault();
+        open = !open;
+        more.classList.toggle('open', open);
+        btn.textContent = open ? 'Show Less' : 'Learn More';
+        if (open) more.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    });
