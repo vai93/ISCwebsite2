@@ -86,7 +86,17 @@ html {
   animation: slideUpText 1s ease forwards;
   animation-delay: 0.6s;
   opacity: 0;
-  font-size: 4.5vw;
+  font-size: 3.5vw;
+  color: white;
+  text-align: center;
+  margin: 20px 0;
+}
+.text-box h5 {
+  font-weight: bold;
+  animation: slideUpText 1s ease forwards;
+  animation-delay: 0.6s;
+  opacity: 0;
+  font-size: 2.5vw;
   color: white;
   text-align: center;
   margin: 20px 0;
@@ -144,8 +154,10 @@ html {
   .text-box h3 {
     font-size: 7vw !important;
   }
-
   .text-box h4 {
+    font-size: 7vw;
+  }
+  .text-box h5 {
     font-size: 4vw;
   }
 
@@ -159,8 +171,10 @@ html {
   .text-box h3 {
     font-size: 8vw;
   }
-
   .text-box h4 {
+    font-size: 6vw !important;
+  }
+  .text-box h5 {
     font-size: 5vw !important;
   }
 
@@ -181,7 +195,10 @@ html {
   }
 
   .text-box h4 {
-    font-size: 6vw !important;
+    font-size: 7vw !important;
+  }
+.text-box h5 {
+    font-size: 6vw;
   }
 
   .text-box p:first-of-type,
