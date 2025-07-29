@@ -1,3 +1,4 @@
+/* === Your Original CSS (untouched) === */
 .custom-navbar {
   position: absolute;
   top: 0;
@@ -65,6 +66,7 @@
   background: rgba(255, 255, 255, 0.2);
   border: none;
   padding: 0.25rem 0.5rem;
+  color: #fff;
 }
 
 .navbar-toggler:focus {
@@ -96,7 +98,6 @@
   font-size: 20px;
   color: #fff !important;
   transition: transform 0.2s;
-
 }
 
 .cta-icons .nav-link:hover {
@@ -125,7 +126,6 @@
 .collapse-logo {
   display: none;
 }
-
 
 @media (max-width: 1199.98px) {
   .brand-logo {
@@ -217,4 +217,121 @@
   .nav-center-icons li {
     margin: 0.4rem;
   }
+}
+
+/* === Sidebar base (hidden by default) === */
+.sidebar {
+  display: none;
+}
+
+/* === Enhanced Sidebar styles for small screens (≤768px) === */
+@media (max-width: 768px) {
+
+  /* hide the original collapse */
+  #mainNavbar {
+    display: none !important;
+  }
+
+  /* sidebar container */
+  .sidebar {
+    display: block;
+    position: fixed;
+    left: -260px;
+    top: 0;
+    width: 260px;
+    height: 100%;
+    background: linear-gradient(to bottom, #6e6e6e , #a0a0a0 );
+    box-shadow: 4px 0 12px rgba(0, 0, 0, 0.3);
+    transition: left 0.4s ease;
+    z-index: 1050;
+    padding-top: 70px;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+  }
+
+  .sidebar.show {
+    left: 0;
+  }
+
+  .sidebar ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .sidebar ul li {
+    margin: 0;
+    padding: 0;
+  }
+
+  .sidebar ul li a {
+    display: flex;
+    align-items: center;
+    padding: 14px 20px;
+    color: #ffffff;
+    font-size: 17px;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.2s;
+  }
+
+  .sidebar ul li a i {
+    margin-right: 12px;
+    font-size: 20px;
+  }
+
+  .sidebar ul li a:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateX(4px);
+  }
+
+  /* separator between sections */
+  .sidebar ul li:not(:last-child) {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  /* close button */
+  .close-btn {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    font-size: 26px;
+    color: #f1f1f1;
+    background: rgba(0, 0, 0, 0.2);
+    width: 36px;
+    height: 36px;
+    line-height: 36px;
+    text-align: center;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+
+  .close-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+  }
+
+  /* hide default toggler icon */
+  .navbar-toggler-icon {
+    display: none !important;
+  }
+
+  /* inside your existing @media (max-width:768px) { … } */
+
+.sidebar-icons {
+  position: absolute;
+  bottom: 30px;
+  width: 100%;
+}
+
+.sidebar-icons a {
+  color: #f1f1f1;
+  font-size: 24px;
+  transition: transform 0.2s, color 0.2s;
+}
+
+.sidebar-icons a:hover {
+  transform: translateY(-2px);
+  color: #ffcc00;
+}
+
 }
