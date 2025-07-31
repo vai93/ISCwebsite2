@@ -1,4 +1,3 @@
-/* === Your Original CSS (untouched) === */
 .custom-navbar {
   position: absolute;
   top: 0;
@@ -151,7 +150,6 @@
     flex-wrap: wrap;
   }
 
-  /* hide desktop extras, show collapse extras */
   .desktop-only {
     display: none !important;
   }
@@ -219,20 +217,20 @@
   }
 }
 
-/* === Sidebar base (hidden by default) === */
+/* === Sidebar base (hidden) === */
 .sidebar {
   display: none;
 }
 
-/* === Enhanced Sidebar styles for small screens (≤768px) === */
-@media (max-width: 768px) {
+/* === Enhanced Sidebar for ≤992px === */
+@media (max-width: 991.98px) {
 
   /* hide the original collapse */
   #mainNavbar {
     display: none !important;
   }
 
-  /* sidebar container */
+  /* show sidebar */
   .sidebar {
     display: block;
     position: fixed;
@@ -240,7 +238,7 @@
     top: 0;
     width: 260px;
     height: 100%;
-    background: linear-gradient(to bottom, #6e6e6e , #a0a0a0 );
+    background: linear-gradient(to bottom, #6e6e6e, #a0a0a0);
     box-shadow: 4px 0 12px rgba(0, 0, 0, 0.3);
     transition: left 0.4s ease;
     z-index: 1050;
@@ -284,12 +282,10 @@
     transform: translateX(4px);
   }
 
-  /* separator between sections */
   .sidebar ul li:not(:last-child) {
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   }
 
-  /* close button */
   .close-btn {
     position: absolute;
     top: 16px;
@@ -310,28 +306,24 @@
     background: rgba(255, 255, 255, 0.2);
   }
 
-  /* hide default toggler icon */
+  .sidebar-icons {
+    position: absolute;
+    bottom: 30px;
+    width: 100%;
+  }
+
+  .sidebar-icons a {
+    color: #f1f1f1;
+    font-size: 24px;
+    transition: transform 0.2s, color 0.2s;
+  }
+
+  .sidebar-icons a:hover {
+    transform: translateY(-2px);
+    color: #ffcc00;
+  }
+
   .navbar-toggler-icon {
     display: none !important;
   }
-
-  /* inside your existing @media (max-width:768px) { … } */
-
-.sidebar-icons {
-  position: absolute;
-  bottom: 30px;
-  width: 100%;
-}
-
-.sidebar-icons a {
-  color: #f1f1f1;
-  font-size: 24px;
-  transition: transform 0.2s, color 0.2s;
-}
-
-.sidebar-icons a:hover {
-  transform: translateY(-2px);
-  color: #ffcc00;
-}
-
 }
