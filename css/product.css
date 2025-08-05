@@ -1,0 +1,344 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: #d2e6ed;
+}
+
+.welding-services-section {
+    padding: 60px 0;
+}
+
+.welding-container {
+    max-width: 1400px;
+    margin: 0 auto;
+
+}
+
+.welding-fade-in {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    will-change: opacity, transform;
+}
+
+.welding-fade-in.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.welding-fade-in:nth-of-type(2) {
+    transition-delay: 200ms;
+}
+
+.welding-slider-wrapper {
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.welding-card-track {
+    display: flex;
+    width: 200%;
+    position: relative;
+    transition: transform 0.8s ease-in-out;
+}
+
+#track1 {
+    transform: translateX(0%);
+}
+
+#track2 {
+    transform: translateX(-50%);
+}
+
+#track1.slid {
+    transform: translateX(-50%);
+}
+
+#track2.slid {
+    transform: translateX(0%);
+}
+
+.welding-card-group {
+    width: 50%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+
+.welding-card {
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.08);
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.welding-card:hover {
+    transform: translateY(2px);
+}
+
+.welding-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    display: block;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.welding-card-content {
+    position: relative;
+    padding: 20px;
+    background: #fff;
+    overflow: hidden;
+}
+
+.welding-card-content::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #7f9196;
+    transform: translateY(-100%);
+    z-index: 1;
+}
+
+.welding-card.hover-in .welding-card-content::before {
+    animation: slideDown 0.4s forwards;
+}
+
+.welding-card.hover-out .welding-card-content::before {
+    animation: slideOut 0.4s forwards;
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+    }
+
+    to {
+        transform: translateY(0%);
+    }
+}
+
+@keyframes slideOut {
+    from {
+        transform: translateY(0%);
+    }
+
+    to {
+        transform: translateY(100%);
+    }
+}
+
+.welding-card-content h5,
+.welding-card-content p,
+.welding-read-more {
+    position: relative;
+    z-index: 2;
+    transition: color 0.3s ease;
+}
+
+.welding-card-content h5 {
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.welding-card-content p {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.welding-read-more {
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #333;
+    border-radius: 5px;
+    width: 130px;
+    cursor: pointer;
+    z-index: 2;
+    padding: 5px 10px;
+}
+
+.welding-read-more::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 101%;
+    width: 100%;
+    height: 100%;
+    background: #333;
+    transition: top 0.4s ease;
+    z-index: 1;
+}
+
+.welding-card:hover .welding-read-more::before {
+    top: 0;
+}
+
+
+.welding-read-more>span {
+    position: relative;
+    z-index: 2;
+}
+
+.welding-read-more span.welding-arrow {
+    display: inline-block;
+    margin-left: 8px;
+    transition: transform 0.4s ease, color 0.3s ease;
+    color: inherit;
+}
+
+.welding-card.hover-in .welding-read-more,
+.welding-card.hover-in .welding-card-content h5,
+.welding-card.hover-in .welding-card-content p {
+    color: #fff;
+}
+
+.welding-card.hover-in .welding-read-more .welding-arrow {
+    transform: translateX(5px);
+}
+
+.welding-slider-nav {
+    text-align: center;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 20px;
+}
+
+.welding-slider-nav button {
+    background-color: #7f7f7f;
+    color: white;
+    border: none;
+    padding: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
+    font-size: 24px;
+    line-height: 1;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+}
+
+.welding-slider-nav button:hover {
+    background-color: #333;
+    transform: scale(1.1);
+}
+
+@media (max-width: 767px) {
+    .welding-services-section {
+        padding: 40px 0;
+    }
+
+    .welding-container {
+        padding: 0 15px;
+    }
+
+    .welding-card-group {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+        padding-right: 0;
+    }
+
+    .welding-card {
+        width: 100%;
+        max-width: 350px;
+    }
+
+    .welding-card img {
+        height: 200px;
+    }
+
+    .welding-card-content h5 {
+        font-size: 15px;
+    }
+
+    .welding-card-content p,
+    .welding-read-more {
+        font-size: 13px;
+    }
+
+    .welding-slider-nav button {
+        width: 45px;
+        height: 45px;
+        font-size: 20px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .welding-container {
+        padding: 0 25px;
+    }
+
+    .welding-card-group {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+        padding-right: 25px;
+    }
+}
+
+.title-barsp {
+    position: relative;
+    display: table;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 50px;
+}
+
+.title-barsp h1 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #000000;
+    margin: 0;
+}
+
+.title-barsp::before,
+.title-barsp::after {
+    content: "";
+    position: absolute;
+    width: 80px;
+    height: 4px;
+    background-color: #fa7e7e;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.title-barsp::before {
+    top: -12px;
+    margin-left: 0px;
+}
+
+.title-barsp::after {
+    bottom: -12px;
+    margin-right: 0px;
+}

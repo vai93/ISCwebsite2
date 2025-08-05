@@ -756,12 +756,12 @@ p {
   display: flex;
   flex-wrap: wrap;
   align-items: stretch;
-  margin: 0 -0.5rem; 
+  margin: 0 -0.5rem;
 }
 
-.choose-section .row > [class*="col-"] {
+.choose-section .row>[class*="col-"] {
   display: flex;
-  padding: 0 0.5rem; 
+  padding: 0 0.5rem;
 }
 
 .choose-card {
@@ -771,6 +771,6 @@ p {
 }
 
 
-.choose-card > .read-more {
+.choose-card>.read-more {
   margin-top: auto;
 }

@@ -10,10 +10,13 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 
   <link rel="stylesheet" href="css/navbar.css">
   <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="css/product.css">
 </head>
 
 <body>
@@ -83,20 +86,6 @@
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  <script>
-    const sidebar = document.getElementById('mobileSidebar');
-    const toggleBtn = document.getElementById('sidebarToggle');
-    const closeBtn = document.getElementById('sidebarClose');
-
-    toggleBtn.addEventListener('click', () => sidebar.classList.add('show'));
-    closeBtn.addEventListener('click', () => sidebar.classList.remove('show'));
-
-    document.addEventListener('click', (e) => {
-      if (!sidebar.contains(e.target) && !toggleBtn.contains(e.target)) {
-        sidebar.classList.remove('show');
-      }
-    });
-  </script>
 
 
   <div class="slider">
@@ -255,6 +244,164 @@
     });
   </script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  
+
+  <!---------------------------------------------------Our Products-------------------------------------------------------------->
+  <section class="welding-services-section">
+    <div class="welding-container">
+
+      <div class="title-barsp" data-aos="fade-up">
+        <h1>Our Products</h1>
+      </div>
+
+      <div class="welding-slider-wrapper welding-fade-in">
+        <div class="welding-card-track" id="track1">
+          <div class="welding-card-group">
+            <div class="welding-card"><img src="images/product/photo/PCC/PCC PANEL-1.png" alt="Metal Works">
+              <div class="welding-card-content">
+                <h5>PCC PANEL</h5>
+                <p>Power Control Centers for efficient distribution and control of electrical power.</p><a href="#"
+                  class="welding-read-more"><span>READ MORE</span><span class="welding-arrow">&#10140;</span></a>
+              </div>
+            </div>
+            <div class="welding-card"><img
+                src="images/product/photo/MCC/MCC PANEL & VFD PANEL with CO2 Flodding System.jpg" alt="Steel Welding">
+              <div class="welding-card-content">
+                <h5>MCC PANEL</h5>
+                <p>Motor Control Centers for centralized motor management and protection.</p><a href="#"
+                  class="welding-read-more"><span>READ MORE</span><span class="welding-arrow">&#10140;</span></a>
+              </div>
+            </div>
+            <div class="welding-card"><img src="images/product/photo/PLC/PLC Panel.jpg" alt="Pipe Welding">
+              <div class="welding-card-content">
+                <h5>PLC PANEL</h5>
+                <p>Programmable Logic Controller panels for automation and precise control.</p><a href="#"
+                  class="welding-read-more"><span>READ MORE</span><span class="welding-arrow">&#10140;</span></a>
+              </div>
+            </div>
+            <div class="welding-card"><img src="images/product/photo/HT/HT PANEL with CO2 Flodding System.jpg"
+                alt="Custom Welding">
+              <div class="welding-card-content">
+                <h5>HT PANEL</h5>
+                <p>High Tension panels for managing high voltage power distribution.</p><a href="#"
+                  class="welding-read-more"><span>READ MORE</span><span class="welding-arrow">&#10140;</span></a>
+              </div>
+            </div>
+          </div>
+          <div class="welding-card-group">
+            <div class="welding-card"><img src="images/product/photo/iMCC/iMCC Panel.jpg" alt="Fabrication">
+              <div class="welding-card-content">
+                <h5>iMCC PANEL</h5>
+                <p>Intelligent MCC panels with advanced motor monitoring and communication.</p><a href="#"
+                  class="welding-read-more"><span>READ MORE</span><span class="welding-arrow">&#10140;</span></a>
+              </div>
+            </div>
+            <div class="welding-card"><img src="images/product/photo/APFC/APFC PANEL-1.png" alt="Repair Services">
+              <div class="welding-card-content">
+                <h5>APFC PANEL</h5>
+                <p>Automatic Power Factor Correction panels to improve energy efficiency.</p><a href="#"
+                  class="welding-read-more"><span>READ MORE</span><span class="welding-arrow">&#10140;</span></a>
+              </div>
+            </div>
+            <div class="welding-card"><img src="images/product/photo/bus_duct/BUS DUCT & PHASE CROSS OVER.jpg"
+                alt="Aluminum Welding">
+              <div class="welding-card-content">
+                <h5>BUS DUCT PANEL</h5>
+                <p>Panels with bus ducts for high current power distribution with reduced cabling.</p><a href="#"
+                  class="welding-read-more"><span>READ MORE</span><span class="welding-arrow">&#10140;</span></a>
+              </div>
+            </div>
+            <div class="welding-card"><img src="images/product/photo/ACDB/ACDB PANEL-INTERNAL VIEW.png"
+                alt="Mobile Welding">
+              <div class="welding-card-content">
+                <h5>ACDB & DCDB PANEL</h5>
+                <p>Panels to manage and protect AC/DC circuits in solar and industrial systems.</p><a href="#"
+                  class="welding-read-more"><span>READ MORE</span><span class="welding-arrow">&#10140;</span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="welding-slider-wrapper welding-fade-in">
+        <div class="welding-card-track" id="track2">
+          <div class="welding-card-group">
+            <div class="welding-card"><img src="images/product/photo/Marshalling/RTCC PANEL-FRONT VIEW.png"
+                alt="Metal Works 2">
+              <div class="welding-card-content">
+                <h5>RTCC & MARSHALLING PANEL</h5>
+                <p>Panels for transformer tap changer control and signal marshalling.</p><a href="#"
+                  class="welding-read-more"><span>READ MORE</span><span class="welding-arrow">&#10140;</span></a>
+              </div>
+            </div>
+            <div class="welding-card"><img src="images/product/photo/VFD/VFD (250 KW) PANEL-INTERNAL VIEW.png"
+                alt="Steel Welding 2">
+              <div class="welding-card-content">
+                <h5>VFD PANEL</h5>
+                <p>Variable Frequency Drive panels for efficient motor speed and torque control.</p><a href="#"
+                  class="welding-read-more"><span>READ MORE</span><span class="welding-arrow">&#10140;</span></a>
+              </div>
+            </div>
+            <div class="welding-card"><img src="images/product/photo/contolPanel/CONTROL PANEL OPEN DOOR VIEW.png"
+                alt="Pipe Welding 2">
+              <div class="welding-card-content">
+                <h5>CONTROL PANEL</h5>
+                <p>General control panels for managing various industrial processes.</p><a href="#"
+                  class="welding-read-more"><span>READ MORE</span><span class="welding-arrow">&#10140;</span></a>
+              </div>
+            </div>
+            <div class="welding-card"><img src="images/product/photo/control_desk/Control Desk Panel.jpg"
+                alt="Custom Welding 2">
+              <div class="welding-card-content">
+                <h5>CONTROL DESK PANEL</h5>
+                <p>Operator-friendly desk panels for monitoring and controlling systems.</p><a href="#"
+                  class="welding-read-more"><span>READ MORE</span><span class="welding-arrow">&#10140;</span></a>
+              </div>
+            </div>
+          </div>
+          <div class="welding-card-group">
+            <div class="welding-card"><img src="images/product/photo/junction_box/JUNCTION BOX.png" alt="Fabrication 2">
+              <div class="welding-card-content">
+                <h5>JUNCTION BOX PANEL</h5>
+                <p>Operator-friendly desk panels for monitoring and controlling systems.</p><a href="#"
+                  class="welding-read-more"><span>READ MORE</span><span class="welding-arrow">&#10140;</span></a>
+              </div>
+            </div>
+            <div class="welding-card"><img src="images/product/photo/contolPanel/CONTROL PANEL OPEN DOOR VIEW.png"
+                alt="Repair Services 2">
+              <div class="welding-card-content">
+                <h5>CONTROL PANEL</h5>
+                <p>General control panels for managing various industrial processes.</p><a href="#"
+                  class="welding-read-more"><span>READ MORE</span><span class="welding-arrow">&#10140;</span></a>
+              </div>
+            </div>
+            <div class="welding-card"><img src="images/product/photo/PMCC/PMCC PANEL.png" class="card-img-top"
+                alt="Aluminum Welding 2">
+              <div class="welding-card-content">
+                <h5>PMCC PANEL</h5>
+                <p>Power and Motor Control Centers integrated for complete power management.</p><a href="#"
+                  class="welding-read-more"><span>READ MORE</span><span class="welding-arrow">&#10140;</span></a>
+              </div>
+            </div>
+            <div class="welding-card"><img src="images/product/photo/PCC/PCC PANEL-1.png" alt="Mobile Welding 2">
+              <div class="welding-card-content">
+                <h5>PCC PANEL</h5>
+                <p>Power Control Centers for efficient distribution and control of electrical power.</p><a href="#"
+                  class="welding-read-more"><span>READ MORE</span><span class="welding-arrow">&#10140;</span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="welding-slider-nav">
+        <button id="prev-btn" title="Previous">&#10094;</button>
+        <button id="next-btn" title="Next">&#10095;</button>
+      </div>
+
+    </div>
+  </section>
+
 
   <script src="js/index.js"></script>
 

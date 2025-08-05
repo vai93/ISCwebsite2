@@ -217,20 +217,16 @@
   }
 }
 
-/* === Sidebar base (hidden) === */
 .sidebar {
   display: none;
 }
 
-/* === Enhanced Sidebar for ≤992px === */
 @media (max-width: 991.98px) {
 
-  /* hide the original collapse */
   #mainNavbar {
     display: none !important;
   }
 
-  /* show sidebar */
   .sidebar {
     display: block;
     position: fixed;
