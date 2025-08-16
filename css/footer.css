@@ -42,7 +42,7 @@ a {
     grid-auto-flow: row;
 }
 
-.footer-grid > * {
+.footer-grid>* {
     min-width: 0;
 }
 
@@ -197,7 +197,7 @@ a {
 
 .gallery img {
     width: 100%;
-    max-width: 200px;   
+    max-width: 200px;
     height: 80px;
     object-fit: cover;
     border-radius: 10px;
@@ -206,10 +206,19 @@ a {
     display: block;
 }
 
-.gallery-column { justify-self: end; }
+.gallery-column {
+    justify-self: end;
+}
 
 
-@media (max-width:1280px) and (min-width:1101px) {
+@media (max-width:1280px) {
+
+    html,
+    body {
+        margin: 0;
+        padding: 0;
+    }
+
     .footer {
         padding: 36px 22px;
     }
@@ -218,127 +227,35 @@ a {
         padding: 0 12px;
     }
 
-     .footer-grid {
-    grid-template-columns: 280px 300px 320px 160px;
-    gap: -4px !important;   
-    margin-right: 0 !important;
-  }
+    .footer-grid {
+        grid-template-columns: 280px 300px 320px 160px;
+        gap: -4px !important;
+        margin-right: 0 !important;
+    }
 
     .gallery img {
         max-width: 160px;
         height: 80px;
     }
 
-    .gallery-column { justify-self: end; }
-    .brand-column .tag { max-width: none; }
-}
-
-@media (max-width:1000px) and (min-width:641px) {
-    .footer {
-        padding: 32px 18px;
-    }
-
-    .footer-grid {
-        grid-template-columns: 1fr 1fr;
-        gap: 20px;
-    }
-
-    .brand-column {
-        grid-column: 1 / -1;
+    .gallery-column {
+        justify-self: end;
     }
 
     .brand-column .tag {
         max-width: none;
-        font-size: 15px;
-        line-height: 1.6;
-        text-align: left;
     }
-
-    .brand-column .logo-wrap {
-        width: 48px;
-        height: 48px;
-    }
-
-    .brand-column img {
-        max-width: 48px;
-        max-height: 48px;
-    }
-
-    .links ul {
-        margin-top: 22px;
-    }
-
-    .gallery {
-        margin-top: 18px;
-        grid-template-columns: 1fr;
-        justify-items: start;
-    }
-
-    .gallery img {
-        max-width: 220px;
-        height: 92px;
-    }
-
-    .contact .meta { margin-top: 18px; }
-    .contact .meta a { font-size: 14px; }
 }
 
-@media (max-width:1100px) {
-    .footer-grid {
-        grid-template-columns: 1fr 1fr;
-    }
-    .brand-column { grid-column: 1 / -1; }
-}
 
-@media (max-width:640px) {
-    .footer-grid { grid-template-columns: 1fr; }
-    .brand-column, .links-column, .contact, .gallery-column { grid-column: auto; }
+@media (max-width:1107px) {
 
-    .gallery {
-        margin-top: 12px;
-        gap: 10px;
-        justify-items: center;
+    html,
+    body {
+        margin: 0;
+        padding: 0;
     }
 
-    .gallery img {
-        width: 100%;
-        max-width: 100%;
-        height: 120px;
-        border-radius: 8px;
-    }
-
-    .brand-column .logo-section { gap: 8px; }
-    .brand-column .logo-wrap { margin-left: 0; }
-    .brand-column .logo-title { text-align: left; }
-    .brand-column .tag { text-align: left; margin-top: 14px; }
-    .brand-column .social { justify-content: flex-start; }
-    .contact h4 { text-align: left; }
-    .contact .meta a { justify-content: flex-start; padding: 8px 0; }
-}
-
-@media (max-width:420px) {
-    .footer { padding: 22px 14px; }
-
-    .brand-column .logo-wrap { width: 44px; height: 44px; }
-    .brand-column img { max-width: 44px; max-height: 44px; }
-    .brand-column .logo-title { font-size: 18px; text-align: left; }
-    .brand-column .tag { font-size: 14px; margin-top: 14px; line-height: 1.5; text-align: left; }
-    .links a { font-size: 15px; }
-    .gallery img { height: 110px; width: 100%; max-width: 100%; }
-    .contact .meta a { gap: 8px; }
-}
-
-.footer a, .footer button { -webkit-tap-highlight-color: rgba(0,0,0,0); }
-.footer a:focus, .footer button:focus {
-    outline: 3px solid rgba(87,196,160,0.18);
-    outline-offset: 2px;
-    border-radius: 8px;
-}
-
-.gallery img { max-width: 100%; box-sizing: border-box; }
-
-
-@media (max-width:640px) {
     .footer-grid {
         grid-template-columns: 1fr;
     }
@@ -350,18 +267,34 @@ a {
         grid-column: auto;
     }
 
-    .gallery {
-        margin-top: 12px;
-        gap: 10px;
-        margin-right: 60px;
+    .gallery-column {
+        justify-self: center !important;
+        align-self: center !important;
+        width: auto !important;
+    }
 
+    .gallery {
+        display: grid !important;
+        justify-items: center !important;
+        justify-content: center !important;
+        align-items: center !important;
+        margin-top: 12px !important;
+        gap: 10px !important;
+        margin-right: 0 !important;
+        padding: 0 !important;
+        grid-auto-rows: min-content;
     }
 
     .gallery img {
+        display: block !important;
+        margin: 0 auto !important;
         width: 100%;
-        max-width: 100%;
-        height: 120px;
-        border-radius: 8px;
+        height: 70px;
+        align-self: center !important;
+        border-radius: 8px !important;
+        box-sizing: border-box !important;
+        border: 1px solid rgba(255, 255, 255, 0.03) !important;
+        box-shadow: 0 8px 18px rgba(2, 6, 23, 0.45) !important;
     }
 
     .brand-column .logo-section {
@@ -373,7 +306,7 @@ a {
     }
 
     .brand-column .logo-title {
-        text-align: left;
+        text-align: center;
     }
 
     .brand-column .tag {
@@ -396,81 +329,13 @@ a {
         text-align: center;
     }
 
-    .brand-column .logo-section{
-        margin-left: 30px;
-    }
-    .brand-column .logo-title{
-        text-align: center;
-        align-items: center;
-    }
-
-}
-
-@media (max-width:420px) {
-    .footer-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .brand-column,
-    .links-column,
-    .contact,
-    .gallery-column {
-        grid-column: auto;
-    }
-
-    .gallery {
-        margin-top: 12px;
-        gap: 10px;
-        margin-right: 60px;
-
-    }
-
-    .gallery img {
-        width: 100%;
-        max-width: 100%;
-        height: 120px;
-        border-radius: 8px;
-    }
-
     .brand-column .logo-section {
-        gap: 0px;
-    }
-
-    .brand-column .logo-wrap {
-        margin-left: 0;
-    }
-
-    .brand-column .logo-title {
-        text-align: left;
-    }
-
-    .brand-column .tag {
-        text-align: center;
-        margin-top: 14px;
-    }
-
-    .brand-column .social {
-        justify-content: center;
-    }
-
-    .contact h4 {
-        text-align: center;
-    }
-
-    .contact .meta a {
-        justify-content: center;
-        padding: 8px 0;
+        display: flex;
         align-items: center;
+        justify-content: center;
+        gap: 10px;
+        width: 100%;
         text-align: center;
-    }
-
-    .brand-column .logo-section{
-        margin-left: 30px;
-    }
-    .brand-column .logo-title{
-        text-align: center;
-        align-items: center;
     }
 
 }
-
