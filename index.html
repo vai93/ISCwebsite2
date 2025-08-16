@@ -17,6 +17,7 @@
   <link rel="stylesheet" href="css/navbar.css">
   <link rel="stylesheet" href="css/index.css">
   <link rel="stylesheet" href="css/product.css">
+  <link rel="stylesheet" href="css/footer.css">
 </head>
 
 <body>
@@ -38,9 +39,9 @@
       <div class="collapse navbar-collapse justify-content-center ms-5" id="mainNavbar">
         <ul class="navbar-nav nav-center">
           <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">About</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Products</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Clients</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#products">Products</a></li>
+          <li class="nav-item"><a class="nav-link" href="#clients">Clients</a></li>
           <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
           <li class="nav-item"><a class="nav-link" href="#">Career</a></li>
           <li class="nav-item"><a class="nav-link" href="#">Gallery</a></li>
@@ -71,9 +72,9 @@
     <span class="close-btn" id="sidebarClose"><i class="fas fa-times"></i></span>
     <ul>
       <li><a href="#"><i class="fas fa-home"></i> Home</a></li>
-      <li><a href="#"><i class="fas fa-info-circle"></i> About</a></li>
-      <li><a href="#"><i class="fas fa-box"></i> Products</a></li>
-      <li><a href="#"><i class="fas fa-users"></i> Clients</a></li>
+      <li><a href="#about"><i class="fas fa-info-circle"></i> About</a></li>
+      <li><a href="#products"><i class="fas fa-box"></i> Products</a></li>
+      <li><a href="#clients"><i class="fas fa-users"></i> Clients</a></li>
       <li><a href="#"><i class="fas fa-phone-alt fa-rotate-90"></i> Contact</a></li>
       <li><a href="#"><i class="fas fa-briefcase"></i> Career</a></li>
       <li><a href="#"><i class="fas fa-image"></i> Gallery</a></li>
@@ -247,7 +248,7 @@
 
 
   <!---------------------------------------------------Our Products-------------------------------------------------------------->
-  <section class="welding-services-section">
+  <section class="welding-services-section" id="products">
     <div class="welding-container">
 
       <div class="title-barsp" data-aos="fade-up">
@@ -414,9 +415,43 @@
     </div>
   </section>
 
+  <!--------------------------------------------------- Vision | Mission | Core Values -------------------------------------------------------------->
+  <section class="vmc">
+    <main class="vmx-wrapper" id="vmx">
+      <nav class="vmx-nav" aria-label="Vision Mission and Values Navigation">
+        <button class="vmx-card" data-key="vision" aria-controls="vmx-detail" aria-selected="true">
+          <span class="vmx-meta">
+            <span class="vmx-title">Vision</span>
+            <span class="vmx-sub">Where we aim to be — long term</span>
+          </span>
+        </button>
+        <button class="vmx-card" data-key="mission" aria-controls="vmx-detail" aria-selected="false">
+          <span class="vmx-meta">
+            <span class="vmx-title">Mission</span>
+            <span class="vmx-sub">How we deliver value — day to day</span>
+          </span>
+        </button>
+        <button class="vmx-card" data-key="values" aria-controls="vmx-detail" aria-selected="false">
+          <span class="vmx-meta">
+            <span class="vmx-title">Core Values</span>
+            <span class="vmx-sub">What guides our decisions</span>
+          </span>
+        </button>
+      </nav>
+      <section id="vmx-detail" class="vmx-detail" role="region" aria-live="polite">
+        <div class="headline">
+          <h2 id="vmx-detail-title"></h2>
+          <div class="vmx-ornament" aria-hidden="true"></div>
+        </div>
+        <p class="vmx-strap" id="vmx-detail-sub"></p>
+        <div class="vmx-body" id="vmx-detail-body"></div>
+      </section>
+    </main>
+  </section>
+
 
   <!---------------------------------------------------Our Client-------------------------------------------------------------->
-  <section class="clients-section">
+  <section class="clients-section" id="clients">
     <div id="clientsCarouselKRS" aria-label="Our Clients — namespaced carousel">
       <div class="title-barsp" data-aos="fade-up">
         <h1>Our Clients</h1>
@@ -473,40 +508,93 @@
     </div>
   </section>
 
-  <!--------------------------------------------------- Vision | Mission | Core Values -------------------------------------------------------------->
-  <section class="vmc">
-    <main class="vmx-wrapper" id="vmx">
-      <nav class="vmx-nav" aria-label="Vision Mission and Values Navigation">
-        <button class="vmx-card" data-key="vision" aria-controls="vmx-detail" aria-selected="true">
-          <span class="vmx-meta">
-            <span class="vmx-title">Vision</span>
-            <span class="vmx-sub">Where we aim to be — long term</span>
-          </span>
-        </button>
-        <button class="vmx-card" data-key="mission" aria-controls="vmx-detail" aria-selected="false">
-          <span class="vmx-meta">
-            <span class="vmx-title">Mission</span>
-            <span class="vmx-sub">How we deliver value — day to day</span>
-          </span>
-        </button>
-        <button class="vmx-card" data-key="values" aria-controls="vmx-detail" aria-selected="false">
-          <span class="vmx-meta">
-            <span class="vmx-title">Core Values</span>
-            <span class="vmx-sub">What guides our decisions</span>
-          </span>
-        </button>
-      </nav>
-      <section id="vmx-detail" class="vmx-detail" role="region" aria-live="polite">
-        <div class="headline">
-          <h2 id="vmx-detail-title"></h2>
-          <div class="vmx-ornament" aria-hidden="true"></div>
+  <!---------------------------------------------------Footer-------------------------------------------------------------->
+
+  <footer class="footer" id="contact" aria-label="Site footer">
+    <div class="wrap">
+      <div class="footer-grid">
+
+        <div class="brand-column">
+          <div class="logo-section" role="img" aria-label="Indian Switchgears and Consultants logo">
+            <div class="logo-wrap" aria-hidden="true">
+              <img src="images/logo1.png" alt="ISC logo">
+            </div>
+            <a class="logo-title" href="index.html">Indian Switchgears and Consultants (ICS) </a>
+          </div>
+
+          <div class="tag">
+            As one of the leading manufacturers of LT Panels and PLC-based Panels in Gujarat, ISC boasts
+            four decades of experience. Renowned for engineering excellence and high-quality standards, it
+            holds a distinct position in the market with precise design and meticulous execution.
+          </div>
+
+          <div class="social" aria-label="Social links">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          </div>
         </div>
-        <p class="vmx-strap" id="vmx-detail-sub"></p>
-        <div class="vmx-body" id="vmx-detail-body"></div>
-      </section>
-    </main>
-  </section>
-  
+
+        <div class="links-column">
+          <div class="links" aria-label="Quick links">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="#">Know us</a></li>
+              <li><a href="#">Products</a></li>
+              <li><a href="#">Services</a></li>
+              <li><a href="#">Clients</a></li>
+              <li><a href="#">Contact us</a></li>
+              <li><a href="#">Jobs</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="contact">
+          <h4>Contact Information</h4>
+
+
+          <div class="meta">
+            <a href="#" aria-label="true">
+              <i class="fa fa-map-marker-alt" aria-hidden="true"></i>
+              <span>945/1, Makarpura GIDC, Makarpura, Vadodara, Gujarat 390010</span>
+            </a>
+
+            <a href="tel:+919426723951" aria-label="Call +91 94267 23951">
+              <i class="fa fa-phone" aria-hidden="true"></i>
+              <span>+91 94267 23951</span>
+            </a>
+
+            <a href="tel:+918866661148" aria-label="Call +91 88666 61148">
+              <i class="fa fa-phone" aria-hidden="true"></i>
+              <span>+91 88666 61148</span>
+            </a>
+
+            <a href="mailto:shailesh@indianswitchgears.com" aria-label="Email shailesh">
+              <i class="fa fa-envelope" aria-hidden="true"></i>
+              <span>shailesh@indianswitchgears.com</span>
+            </a>
+
+            <a href="mailto:ashish@indianswitchgears.com" aria-label="Email ashish">
+              <i class="fa fa-envelope" aria-hidden="true"></i>
+              <span>ashish@indianswitchgears.com</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="gallery-column">
+          <div class="gallery" role="list" aria-label="Factory and team images">
+            <img src="images/f4.jpeg" alt="Factory floor" role="listitem">
+            <img src="images/f2.jpeg" alt="Electrical panel close-up" role="listitem">
+            <img src="images/f3.png" alt="Team or logo" role="listitem">
+            <img src="images/footerlogo1.jpeg" alt="Brand mark" role="listitem">
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </footer>
+
 
   <script src="js/index.js"></script>
 

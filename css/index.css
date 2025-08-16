@@ -1036,7 +1036,7 @@ p {
 
 
 .vmx-card.active {
-  border: 2px solid var(--accent);
+  border: 2px solid black;
   box-shadow: 0 14px 40px rgba(11, 61, 145, 0.12);
   transform: translateY(-6px) scale(1.02);
 }
@@ -1054,7 +1054,7 @@ p {
 .vmx-title {
   font-size: 18px;
   font-weight: 600;
-  color: var(--accent);
+  color: black;
   margin: 0;
 }
 
