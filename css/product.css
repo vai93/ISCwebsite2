@@ -64,16 +64,14 @@ body {
 }
 
 .welding-card-group {
-    width: 100%; /* 50% karta 100% better lage */
+    width: 100%;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 30px;
-    background: #ffffff; /* pure white background */
-    padding: 20px; /* thodu spacing nice look mate */
-    border-radius: 12px; /* optional - smooth edges */
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
 }
-
-
 
 .welding-card {
     background: #fff;
@@ -82,23 +80,21 @@ body {
     position: relative;
     display: flex;
     flex-direction: column;
-    border: 2px solid #5e6c6f; /* subtle border */
     transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
 
-    /* Classic premium shadow */
-    box-shadow: 
-        0 4px 6px rgba(0, 0, 0, 0.1), 
-        0 8px 20px rgba(0, 0, 0, 0.08), 
+    box-shadow:
+        0 4px 6px rgba(0, 0, 0, 0.1),
+        0 8px 20px rgba(0, 0, 0, 0.08),
         inset 0 1px 2px rgba(255, 255, 255, 0.6);
 }
 
 .welding-card:hover {
-    transform: translateY(-8px); /* smooth lift effect */
-    border: 2px solid #000000; /* attractive glowing border */
-    box-shadow: 
-        0 6px 12px rgba(0, 0, 0, 0.15), 
-        0 14px 28px rgba(0, 0, 0, 0.12), 
-        0 0 15px #5e6c6f; /* subtle outer glow */
+    transform: translateY(-8px);
+    border: 2px solid #5e6c6f;
+    box-shadow:
+        0 4px 6px rgba(0, 0, 0, 0.1),
+        0 8px 16px rgba(0, 0, 0, 0.2),
+        0 0 5px #5e6c6f;
 }
 
 
