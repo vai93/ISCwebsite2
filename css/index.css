@@ -875,7 +875,9 @@ p {
 /*   border: var(--border-size) solid #000; */
   border-radius: 6px;
   overflow: hidden;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+box-shadow: 
+  0 4px 6px rgba(0, 0, 0, 0.1),   /* soft base */
+  0 8px 16px rgba(0, 0, 0, 0.2); 
   transition: transform .18s ease, box-shadow .18s ease;
 }
 
@@ -1270,3 +1272,4 @@ p {
   }
 
 }
+
