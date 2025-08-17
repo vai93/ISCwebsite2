@@ -872,7 +872,7 @@ p {
   padding: 6px;
   margin: 0;
   background: #ffffff;
-  border: var(--border-size) solid #000;
+/*   border: var(--border-size) solid #000; */
   border-radius: 6px;
   overflow: hidden;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
@@ -1268,4 +1268,5 @@ p {
     opacity: 1;
     transform: translateY(0);
   }
+
 }
