@@ -1,0 +1,168 @@
+const sidebar = document.getElementById('mobileSidebar');
+const toggleBtn = document.getElementById('sidebarToggle');
+const closeBtn = document.getElementById('sidebarClose');
+
+toggleBtn.addEventListener('click', () => sidebar.classList.add('show'));
+closeBtn.addEventListener('click', () => sidebar.classList.remove('show'));
+
+document.addEventListener('click', (e) => {
+  if (!sidebar.contains(e.target) && !toggleBtn.contains(e.target)) {
+    sidebar.classList.remove('show');
+  }
+});
+
+const cards = document.querySelectorAll('.welding-card');
+cards.forEach(card => {
+  card.addEventListener('mouseenter', () => {
+    card.classList.remove('hover-out');
+    card.classList.add('hover-in');
+  });
+  card.addEventListener('mouseleave', () => {
+    card.classList.remove('hover-in');
+    card.classList.add('hover-out');
+  });
+});
+
+const products = [
+  { name: 'ACDB & DCDB PANEL', description: 'Panels to manage and protect AC/DC circuits in solar and industrial systems.', images: ['images/product/photo/ACDB/ACDB PANEL.png', 'images/product/photo/ACDB/ACDB PANEL-INTERNAL VIEW.png', 'images/product/photo/ACDB/DCDB PANEL.png'] },
+  { name: 'APFC PANEL / RTPFC PANEL', description: 'Automatic Power Factor Correction Panels that enhance energy efficiency, reduce penalties, and stabilize electrical load conditions.', images: ['images/product/photo/APFC/APFC PANEL-1.png', 'images/product/photo/APFC/APFC PANEL.jpg'] },
+  { name: 'BUS DUCT PANEL', description: 'High current Bus Duct systems for compact, flexible, and reliable power transmission across industrial zones.', images: ['images/product/photo/bus_duct/BUS DUCT-1.JPG', 'images/product/photo/bus_duct/BUS DUCT & PHASE CROSS OVER.jpg', 'images/product/photo/bus_duct/BUS DUCT PHASE CROSS OVER.jpg', 'images/product/photo/bus_duct/BUSDUCT TO PCC PANEL CONNECTION.jpg', 'images/product/photo/bus_duct/Sandwich Bus-Duct.jpg'] },
+  { name: 'CONTROL PANEL', description: 'General control panels for managing various industrial processes.', images: ['images/product/photo/contolPanel/CONTROL PANEL.png', 'images/product/photo/contolPanel/CONTROL PANEL OPEN DOOR VIEW.png', 'images/product/photo/contolPanel/IP-55,65 Control Panel.jpg'] },
+  { name: 'CONTROL DESK PANEL', description: 'Ergonomically designed operator desks with control switches, meters, and mimic diagrams for centralized supervision.', images: ['images/product/photo/control_desk/Control Desk Panel.jpg'] },
+  { name: 'HT PANEL', description: 'High Tension Panels built for safe operation and protection in medium to high voltage power distribution networks.', images: ['images/product/photo/HT/HT PANEL with CO2 Flodding System.jpg'] },
+  { name: 'iMCC PANEL', description: 'Intelligent MCC Panels with embedded communication, automation features, and advanced fault diagnostics for smarter motor control.', images: ['images/product/photo/iMCC/iMCC Panel.jpg', 'images/product/photo/iMCC/iMCC Panel-1.jpg'] },
+  { name: 'JUNCTION BOX PANEL', description: 'Operator-friendly desk panels for monitoring and controlling systems.', images: ['images/product/photo/junction_box/JUNCTION BOX.png'] },
+  { name: 'MARSHALLING Box', description: 'Organized marshalling solutions for complex wiring systems.', images: ['images/product/photo/Marshalling/Marshalling Box-Front View.png', 'images/product/photo/Marshalling/RTCC PANEL-FRONT VIEW.png', 'images/product/photo/Marshalling/Marshalling Box-Internal View.png'] },
+  { name: 'MCC PANEL', description: 'Motor Control Center Panels for centralized control, protection, and operation of multiple motors in industrial applications.', images: ['images/product/photo/MCC/MCC PANEL.jpg', 'images/product/photo/MCC/MCC PANEL-1.png', 'images/product/photo/MCC/MCC PANEL-2.png', 'images/product/photo/MCC/MCC PANEL-3.jpg'] },
+  { name: 'PCC PANEL', description: 'Power Control Center Panels designed for reliable and efficient distribution of electrical power in large-scale industrial systems.', images: ['images/product/photo/PCC/PCC Panel.jpg', 'images/product/photo/PCC/PCC PANEL-1.png', 'images/product/photo/PCC/PCC PANEL-2.png', 'images/product/photo/PCC/PCC PANEL 6300A WITH DOUBLE BUSBAR.jpg'] },
+  { name: 'PLC AUTOMATION PANEL', description: 'Custom-built PLC Panels integrated with HMI, SCADA, and field I/Os for seamless process automation and control.', images: ['images/product/photo/PLC/PLC Panel.jpg', 'images/product/photo/PLC/PLC Panel-Front.jpg', 'images/product/photo/PLC/PLC PANEL-INTERNAL VIEW.png', 'images/product/photo/PLC/AUTOMATION-SCADA SCREEN-1.png'] },
+  { name: 'RTCC PANEL & MARSHALLING BOX', description: 'Remote Tap Changer Control Panels and Marshalling Boxes for streamlined transformer automation and signal management.', images: ['images/product/photo/Marshalling/RTCC PANEL-FRONT VIEW.png', 'images/product/photo/Marshalling/RTCC Panel- Rear Side Internal View.png', 'images/product/photo/Marshalling/Marshalling Box-Internal View.png', 'images/product/photo/Marshalling/Marshalling Box-Front View.png', 'images/product/photo/Marshalling/Fiber Optic Box.png'] },
+  { name: 'FEEDER PILLAR PANEL', description: 'Rugged outdoor power distribution solutions used in infrastructure, utilities, and street lighting networks', images: ['images/product/photo/VFD/VFD (250 KW) PANEL.png'] }
+];
+
+const gallery = document.getElementById('product-gallery');
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightbox-img');
+const lightboxCounter = document.getElementById('lightbox-counter');
+let currentImages = [];
+let currentImageIndex = 0;
+
+function displayProducts() {
+  products.forEach((product) => {
+    const card = document.createElement('div');
+    card.className = 'product-card';
+
+    let imagesHTML = '';
+    product.images.forEach((img, index) => {
+      imagesHTML += `<img src="${img}" alt="${product.name}" class="product-card-img${index === 0 ? ' active' : ''}" loading="lazy">`;
+    });
+
+    card.innerHTML = `
+                <div class="product-card-img-container">
+                    ${imagesHTML}
+                    <div class="card-nav">
+                        <button class="card-nav-btn prev" aria-label="Previous image"><i class="fa-solid fa-chevron-left"></i></button>
+                        <button class="card-nav-btn next" aria-label="Next image"><i class="fa-solid fa-chevron-right"></i></button>
+                    </div>
+                    <div class="card-counter">1 / ${product.images.length}</div>
+                </div>
+                <div class="card-overlay">
+                    <h3>${product.name}</h3>
+                </div>
+                <div class="product-footer">
+                    <div class="product-title">${product.name}</div>
+                    <div class="product-desc">${product.description}</div>
+                </div>
+                `;
+
+    gallery.appendChild(card);
+
+    const imgContainer = card.querySelector('.product-card-img-container');
+    const imgs = imgContainer.querySelectorAll('.product-card-img');
+    const counter = imgContainer.querySelector('.card-counter');
+    let currentIndex = 0;
+
+    function updateImage() {
+      imgs.forEach((imgEl, idx) => {
+        imgEl.classList.toggle('active', idx === currentIndex);
+      });
+      counter.textContent = `${currentIndex + 1} / ${product.images.length}`;
+    }
+
+    card.querySelector('.card-nav-btn.prev').addEventListener('click', (e) => {
+      e.stopPropagation();
+      currentIndex = (currentIndex - 1 + imgs.length) % imgs.length;
+      updateImage();
+    });
+
+    card.querySelector('.card-nav-btn.next').addEventListener('click', (e) => {
+      e.stopPropagation();
+      currentIndex = (currentIndex + 1) % imgs.length;
+      updateImage();
+    });
+
+    card.addEventListener('click', () => {
+      openLightbox(product.images, currentIndex);
+    });
+  });
+}
+
+function openLightbox(images, index) {
+  currentImages = images;
+  currentImageIndex = index || 0;
+  updateLightboxImage();
+  lightbox.classList.add('show');
+  lightbox.setAttribute('aria-hidden', 'false');
+}
+function updateLightboxImage() {
+  lightboxImg.src = currentImages[currentImageIndex];
+  lightboxCounter.textContent = `${currentImageIndex + 1} / ${currentImages.length}`;
+}
+function showNextImage() {
+  currentImageIndex = (currentImageIndex + 1) % currentImages.length;
+  updateLightboxImage();
+}
+function showPrevImage() {
+  currentImageIndex = (currentImageIndex - 1 + currentImages.length) % currentImages.length;
+  updateLightboxImage();
+}
+function closeLightbox() {
+  lightbox.classList.remove('show');
+  lightbox.setAttribute('aria-hidden', 'true');
+}
+
+document.querySelector('.lightbox-next').addEventListener('click', (e) => { e.stopPropagation(); showNextImage(); });
+document.querySelector('.lightbox-prev').addEventListener('click', (e) => { e.stopPropagation(); showPrevImage(); });
+document.querySelector('.lightbox-close').addEventListener('click', (e) => { e.stopPropagation(); closeLightbox(); });
+lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.12 });
+
+displayProducts();
+document.querySelectorAll('.product-card').forEach(card => observer.observe(card));
+
+const machineryBtn = document.getElementById('machineryBtn');
+const testingBtn = document.getElementById('testingBtn');
+const machineryModal = document.getElementById('machineryModal');
+const testingModal = document.getElementById('testingModal');
+
+const openModal = (modal) => modal.classList.add('show');
+const closeModal = (modal) => modal.classList.remove('show');
+
+machineryBtn.addEventListener('click', () => openModal(machineryModal));
+testingBtn.addEventListener('click', () => openModal(testingModal));
+
+document.querySelectorAll('.modal .close-btn').forEach(btn => {
+  btn.addEventListener('click', () => closeModal(btn.closest('.modal')));
+});
+document.querySelectorAll('.modal').forEach(modal => {
+  modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(modal); });
+});
+
+
