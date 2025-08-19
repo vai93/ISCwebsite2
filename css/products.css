@@ -515,12 +515,30 @@ body {
 }
 
 @media (min-width: 992px) {
+    body {
+        color: var(--text-color);
+        padding-top: 75px;
+    }
+
     .product-gallery {
         grid-template-columns: repeat(3, 1fr);
     }
 }
 
+@media (min-width: 774px) {
+    body {
+        color: var(--text-color);
+        padding-top: 75px;
+    }
+}
+
 @media (max-width: 768px) {
+
+    body {
+        color: var(--text-color);
+        padding-top: 60px;
+    }
+
     .hero-content h1 {
         font-size: 3rem;
         padding: 20px 30px;
