@@ -28,6 +28,6 @@ AOS.init({ duration: 1000, once: true, offset: 50 });
 
     document.getElementById("contactForm").addEventListener("submit", function(e){
       e.preventDefault();
-      alert("✅ Thank you! Your message has been sent successfully.");
+      alert("Thank you! Your message has been sent successfully.");
       this.reset();
     });
