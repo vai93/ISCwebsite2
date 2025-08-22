@@ -191,20 +191,21 @@ a {
     grid-template-columns: fr;
     gap: 12px;
     margin-top: 10px;
-    align-items: start;
-    justify-items: start;
+    align-items: center;
+    justify-items: center;
 }
 
 .gallery img {
-    width: 100%;
-    max-width: 200px;
-    height: 80px;
-    object-fit: cover;
+    max-width: 100%;
+    height: 70px;
+    justify-content: center;
+    object-fit: contain;
     border-radius: 10px;
     border: 1px solid rgba(255, 255, 255, 0.03);
     box-shadow: 0 8px 18px rgba(2, 6, 23, 0.45);
     display: block;
 }
+
 
 .gallery-column {
     justify-self: end;
@@ -288,7 +289,6 @@ a {
     .gallery img {
         display: block !important;
         margin: 0 auto !important;
-        width: 100%;
         height: 70px;
         align-self: center !important;
         border-radius: 8px !important;

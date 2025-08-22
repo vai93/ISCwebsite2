@@ -1101,7 +1101,7 @@ box-shadow:
 .vmx-strap {
   font-size: 15px;
   color: black;
-  font-weight: 500;
+  font-weight: 700;
   margin: 0;
 }
 
@@ -1229,8 +1229,20 @@ box-shadow:
   .vmx-body {
     font-size: 15px;
   }
+
+  .vmx-body values {
+    font-size: 15px;
+  } 
 }
 
+.vmx-body strong {
+  color: #000000; /* This is the code for black */
+}
+
+.vmc .vmx-body {
+  font-size: 15px;
+  font-weight: 500;
+}
 
 .vmx-card:focus-visible {
   outline: 3px solid rgba(11, 61, 145, 0.2);
@@ -1271,4 +1283,5 @@ box-shadow:
   }
 
 }
+
 
