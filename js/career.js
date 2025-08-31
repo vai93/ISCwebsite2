@@ -191,3 +191,32 @@ document.addEventListener("DOMContentLoaded", () => {
   initializeStaticHandlers();
   loadJobsAndInitialize();
 });
+
+(function () {
+  const btn = document.getElementById("backToTop");
+  if (!btn) return;
+
+  const isScrollable = () =>
+    document.documentElement.scrollHeight > window.innerHeight + 10;
+
+  const SCROLL_TRIGGER = Math.round(window.innerHeight * 0.15); 
+
+  function toggleBackToTop() {
+    if (
+      isScrollable() &&
+      (window.scrollY || document.documentElement.scrollTop) > SCROLL_TRIGGER
+    ) {
+      btn.classList.add("show");
+    } else {
+      btn.classList.remove("show");
+    }
+  }
+
+  btn.addEventListener("click", () => {
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+  });
+
+  window.addEventListener("load", toggleBackToTop, { once: true });
+  window.addEventListener("resize", toggleBackToTop);
+  window.addEventListener("scroll", toggleBackToTop, { passive: true });
+})();
