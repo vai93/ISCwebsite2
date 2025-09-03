@@ -58,12 +58,12 @@ body {
 }
 
 .prodg {
-    color: #7f9196 !important;
+    color: #00c8ff !important;
 }
 
 .products-section {
     padding: 40px 5%;
-    background: #7f9196;
+    background: #ffffff;
 }
 
 .product-gallery {
@@ -76,15 +76,14 @@ body {
 
 .product-card {
     aspect-ratio: 8 / 7;
-    border-radius: 15px;
+    border-radius: 17px;
     overflow: hidden;
     position: relative;
     cursor: pointer;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.45);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
     transition: transform 0.4s ease, box-shadow 0.4s ease;
     transform: translateY(20px);
     opacity: 0;
-    background: var(--card-bg);
     display: flex;
     flex-direction: column;
 }
@@ -153,7 +152,7 @@ body {
     text-align: center;
     padding: 14px 4px;
     min-height: 110px;
-    background: #0d1b2a;
+    background: #7f9196;
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
     backdrop-filter: blur(4px);
@@ -163,13 +162,13 @@ body {
     font-size: 1.15rem;
     font-weight: 700;
     white-space: nowrap;
-    color: var(--text-color);
+    color: rgb(255, 255, 255);
     margin-bottom: 6px;
 }
 
 .product-footer .product-desc {
     font-size: 0.85rem;
-    color: rgba(255, 255, 255, 0.75);
+    color: white;
     line-height: 1.25;
     max-height: 3.2rem;
     overflow: hidden;
@@ -342,7 +341,7 @@ body {
 .capabilities-container {
     text-align: center;
     padding: 40px 20px;
-    background: #ffffff;
+    background: #7f9196;
 }
 
 .btn-container {
@@ -360,8 +359,8 @@ body {
     padding: 14px 28px;
     font-size: 1.05rem;
     font-weight: 600;
-    color: var(--text-color);
-    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    color: black;
+    background: linear-gradient(45deg, var(white), var(white));
     border: none;
     border-radius: 50px;
     cursor: pointer;
