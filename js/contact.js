@@ -1,7 +1,7 @@
 const sidebar = document.getElementById("mobileSidebar");
 const toggleBtn = document.getElementById("sidebarToggle");
 const closeBtn = document.getElementById("sidebarClose");
-
+const submitBtn = document.getElementById("sendBtn");
 toggleBtn.addEventListener("click", () => sidebar.classList.add("show"));
 closeBtn.addEventListener("click", () => sidebar.classList.remove("show"));
 
@@ -25,10 +25,56 @@ cards.forEach((card) => {
 
 AOS.init({ duration: 1000, once: true, offset: 50 });
 
-document.getElementById("contactForm").addEventListener("submit", function (e) {
-  e.preventDefault();
-  alert("Thank you! Your message has been sent successfully.");
-  this.reset();
+// document.getElementById("contactForm").addEventListener("submit", function (e) {
+//   e.preventDefault();
+//   alert("Thank you! Your message has been sent successfully.");
+//   this.reset();
+// });
+const form = document.getElementById("contactForm");
+submitBtn.addEventListener("click", async function (e) {
+    e.preventDefault();
+     this.classList.add("loading");
+     this.innerHTML = `
+      <svg class="spinner" viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4" fill="none" />
+      </svg>
+      Sending...
+  `;
+   const email = document.getElementById("email").value.trim();
+    const fname = document.getElementById("fname").value.trim();
+     const phone = document.getElementById("phone").value.trim();
+      const message = document.getElementById("message").value.trim();
+    const payload = {
+        name: fname,
+        email: email,
+        contact:phone,
+        message: message,
+        websiteId: "ISC"
+    };
+    try {
+        const res = await fetch("https://my-mailserver.vercel.app/api/contactMail", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(payload),
+        });
+
+        const result = await res.json();
+        alert("Thank you for contacting us! We will get back to you soon.");
+        form.reset();
+    } catch (err) {
+        console.error(err);
+    alert("Something went wrong. Please try again.");
+
+    submitBtn.classList.remove("loading");
+    submitBtn.innerHTML = `
+        Send Message
+    `;
+    }finally{
+      submitBtn.classList.remove("loading");
+       submitBtn.innerHTML = `
+        Send Message
+    `;
+    }
 });
 
 (function () {

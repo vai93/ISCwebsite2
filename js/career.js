@@ -220,3 +220,63 @@ document.addEventListener("DOMContentLoaded", () => {
   window.addEventListener("resize", toggleBackToTop);
   window.addEventListener("scroll", toggleBackToTop, { passive: true });
 })();
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.querySelector("form");
+  const submitBtn = form.querySelector("button[type='submit']");
+  const fileInput = document.getElementById("resume");
+  const fileNameDisplay = document.querySelector(".file-upload-filename");
+
+  // Show selected filename
+  fileInput.addEventListener("change", () => {
+    const file = fileInput.files[0];
+    fileNameDisplay.textContent = file ? file.name : "No file selected...";
+  });
+
+  submitBtn.addEventListener("click", async function (e) {
+    e.preventDefault();
+     this.classList.add("loading");
+     this.innerHTML = `
+      <svg class="spinner" viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4" fill="none" />
+      </svg>
+      Sending...
+  `;
+    const formData = new FormData();
+    formData.append("name", document.getElementById("fname").value.trim());
+    formData.append("contact", document.getElementById("phone").value.trim());
+    formData.append("email", document.getElementById("email").value.trim());
+    formData.append("position", document.getElementById("position").value.trim());
+    formData.append("message", document.getElementById("message").value.trim());
+    formData.append("websiteId", "ISC"); // adjust if multiple sites
+    if (fileInput.files.length > 0) {
+      formData.append("resume", fileInput.files[0]);
+    }
+
+    try {
+      const res = await fetch("https://my-mailserver.vercel.app/api/careerMail", {
+        method: "POST",
+        body: formData,
+      });
+
+      const result = await res.json();
+
+      if (!res.ok) throw new Error(result.message || "Submission failed");
+
+      alert("✅ " + result.message);
+      form.reset();
+      fileNameDisplay.textContent = "No file selected...";
+ } catch (err) {
+        console.error(err);
+    alert("Something went wrong. Please try again.");
+
+    submitBtn.classList.remove("loading");
+    submitBtn.innerHTML = 'Submit Application';
+    }finally{
+      submitBtn.classList.remove("loading");
+       submitBtn.innerHTML = 'Submit Application';
+    }
+    
+  });
+});
