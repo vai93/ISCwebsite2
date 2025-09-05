@@ -11,18 +11,6 @@ document.addEventListener("click", (e) => {
   }
 });
 
-const cards = document.querySelectorAll(".welding-card");
-cards.forEach((card) => {
-  card.addEventListener("mouseenter", () => {
-    card.classList.remove("hover-out");
-    card.classList.add("hover-in");
-  });
-  card.addEventListener("mouseleave", () => {
-    card.classList.remove("hover-in");
-    card.classList.add("hover-out");
-  });
-});
-
 (function () {
   const root = document.getElementById("isc-embed");
   if (!root) return;
@@ -100,9 +88,11 @@ cards.forEach((card) => {
   }, 3500);
 
   const sliderWrapper = root.querySelector(".workmanship");
+
   function stopAutoRotate() {
     clearInterval(autoRotate);
   }
+
   function startAutoRotate() {
     stopAutoRotate();
     autoRotate = setInterval(() => {
@@ -116,6 +106,7 @@ cards.forEach((card) => {
 
   let startX = 0;
   let isDragging = false;
+
   function handleDragStart(clientX) {
     isDragging = true;
     startX = clientX;
@@ -125,6 +116,7 @@ cards.forEach((card) => {
       sliderWrapper.style.userSelect = "none";
     }
   }
+
   function handleDragMove(clientX) {
     if (!isDragging) return;
     const diff = startX - clientX;
@@ -134,6 +126,7 @@ cards.forEach((card) => {
       isDragging = false;
     }
   }
+
   function handleDragEnd() {
     isDragging = false;
     if (sliderWrapper) {
@@ -146,13 +139,17 @@ cards.forEach((card) => {
     sliderWrapper.addEventListener(
       "touchstart",
       (e) => handleDragStart(e.touches[0].clientX),
-      { passive: true }
+      {
+        passive: true,
+      }
     );
   if (sliderWrapper)
     sliderWrapper.addEventListener(
       "touchmove",
       (e) => handleDragMove(e.touches[0].clientX),
-      { passive: true }
+      {
+        passive: true,
+      }
     );
   if (sliderWrapper) sliderWrapper.addEventListener("touchend", handleDragEnd);
 
@@ -171,7 +168,6 @@ cards.forEach((card) => {
   });
   window.addEventListener("resize", loadShow);
 
-  // Modal functionality (slider)
   const modal = root.querySelector("#isc-imageModal");
   const modalImg = root.querySelector("#isc-modalImage");
   const closeModalBtn = root.querySelector("#isc-closeModal");
@@ -210,117 +206,7 @@ cards.forEach((card) => {
       closeModal();
   });
 
-  // Initial
   navigate(active);
-})();
-
-(function () {
-  const root = document.getElementById("isc-embed");
-  if (!root) return;
-
-  const gallery = Array.from(root.querySelectorAll(".card"));
-  const photos = gallery.map((g) => g.querySelector("img"));
-  const io = new IntersectionObserver(
-    (entries, obs) => {
-      entries.forEach((e) => {
-        if (e.isIntersecting) {
-          e.target.classList.add("in-view");
-          obs.unobserve(e.target);
-        }
-      });
-    },
-    { threshold: 0.12 }
-  );
-  gallery.forEach((g) => {
-    if (!g.classList.contains("in-view")) io.observe(g);
-  });
-
-  // LIGHTBOX elements (scoped ids)
-  const lightbox = root.querySelector("#isc-lightbox");
-  const lbImage = root.querySelector("#isc-lbImage");
-  const lbCaption = root.querySelector("#isc-lbCaption");
-  const lbClose = root.querySelector("#isc-lbClose");
-  const lbNext = root.querySelector("#isc-lbNext");
-  const lbPrev = root.querySelector("#isc-lbPrev");
-  let currentIndex = -1;
-
-  function openLightbox(idx) {
-    currentIndex = idx;
-    const card = gallery[idx];
-    const img = card.querySelector("img");
-    if (!lbImage) return;
-    lbImage.src = img.src;
-    lbImage.alt = img.alt || "Image " + (idx + 1);
-    if (lbCaption)
-      lbCaption.textContent = card.dataset.caption || img.alt || "";
-    if (lightbox) {
-      lightbox.classList.add("open");
-      lightbox.setAttribute("aria-hidden", "false");
-    }
-    if (lbClose) lbClose.focus();
-    document.body.style.overflow = "hidden";
-    [idx - 1, idx + 1].forEach((i) => {
-      if (i >= 0 && i < photos.length) {
-        const p = new Image();
-        p.src = photos[i].src;
-      }
-    });
-  }
-
-  function closeLightbox() {
-    if (!lightbox) return;
-    lightbox.classList.remove("open");
-    lightbox.setAttribute("aria-hidden", "true");
-    setTimeout(() => {
-      if (lbImage) lbImage.src = "";
-    }, 220);
-    document.body.style.overflow = "";
-  }
-
-  function nextImage() {
-    openLightbox((currentIndex + 1) % photos.length);
-  }
-  function prevImage() {
-    openLightbox((currentIndex - 1 + photos.length) % photos.length);
-  }
-
-  gallery.forEach((card, idx) => {
-    card.addEventListener("click", () => openLightbox(idx));
-    card.addEventListener("keydown", (e) => {
-      if (e.key === "Enter" || e.key === " ") {
-        e.preventDefault();
-        openLightbox(idx);
-      }
-    });
-  });
-
-  if (lbClose) lbClose.addEventListener("click", closeLightbox);
-  if (lbNext) lbNext.addEventListener("click", nextImage);
-  if (lbPrev) lbPrev.addEventListener("click", prevImage);
-
-  document.addEventListener("keydown", (e) => {
-    if (!lightbox || !lightbox.classList.contains("open")) return;
-    if (e.key === "Escape") closeLightbox();
-    if (e.key === "ArrowRight") nextImage();
-    if (e.key === "ArrowLeft") prevImage();
-  });
-
-  if (lightbox)
-    lightbox.addEventListener("click", (e) => {
-      if (e.target === lightbox) closeLightbox();
-    });
-
-  document.addEventListener(
-    "focus",
-    (ev) => {
-      if (!lightbox || !lightbox.classList.contains("open")) return;
-      if (!lightbox.contains(ev.target)) {
-        ev.preventDefault();
-        if (lbClose) lbClose.focus();
-      }
-    },
-    true
-  );
 })();
 
 (function () {
@@ -344,10 +230,18 @@ cards.forEach((card) => {
   }
 
   btn.addEventListener("click", () => {
-    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "smooth",
+    });
   });
 
-  window.addEventListener("load", toggleBackToTop, { once: true });
+  window.addEventListener("load", toggleBackToTop, {
+    once: true,
+  });
   window.addEventListener("resize", toggleBackToTop);
-  window.addEventListener("scroll", toggleBackToTop, { passive: true });
+  window.addEventListener("scroll", toggleBackToTop, {
+    passive: true,
+  });
 })();
