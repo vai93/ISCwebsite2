@@ -194,30 +194,20 @@
                         </div>
                     </form>
 
-                    <!-- <div id="successMessage" class="d-none text-center">
-                        <i class="fas fa-check-circle fa-3x text-success mb-3"></i>
-                        <h4 class="mb-2">Thank You!</h4>
-                        <p class="text-muted">Your feedback has been submitted successfully. We appreciate you taking
-                            the time to help us improve.</p>
-                    </div> -->
-                    <div class="thank-you-message" id="successMessage" style="display: none;">
-                        <div class="success-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round">
-                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-                                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                    <div class="thank-you-container" id="successMessage" style="display: none;">
+                        <div class="checkmark-wrapper">
+                            <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+                                <circle class="checkmark-circle" cx="26" cy="26" r="25" fill="none" />
+                                <path class="checkmark-check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8" />
                             </svg>
                         </div>
-                        <h2>Thank You!</h2>
-                        <p>Your feedback has been submitted successfully. We appreciate
-                            your input!</p>
-                        <div class="center-button">
-                            <button class="btn-primary" id="submit-another">Submit
-                                another response</button>
-                        </div>
+                        <h2 class="thank-you-title">Thank You!</h2>
+                        <p class="thank-you-text">Your feedback has been submitted successfully. We appreciate your
+                            valuable input!</p>
+                        <button class="thank-you-btn" id="submit-another">
+                            Submit Another Response
+                        </button>
                     </div>
-
                 </div>
             </div>
         </section>
@@ -311,4 +301,3 @@
 
 
 </html>
-
