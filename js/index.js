@@ -275,8 +275,9 @@ sectionsToAnimate.forEach((section) => {
   const buttons = Array.from(wrapper.querySelectorAll(".vmx-card"));
   const detail = document.getElementById("vmx-detail");
   const titleEl = document.getElementById("vmx-detail-title");
-  const subEl = document.getElementById("vmx-detail-sub");
+  const subEl = a = document.getElementById("vmx-detail-sub");
   const bodyEl = document.getElementById("vmx-detail-body");
+
   function render(key) {
     const data = CONTENT[key];
     detail.classList.remove("fade-in");
@@ -285,16 +286,16 @@ sectionsToAnimate.forEach((section) => {
       titleEl.textContent = data.title;
       subEl.textContent = data.sub;
       if (data.values) {
-        const container = document.createElement("div");
-        container.className = "vmx-values-list";
+        const list = document.createElement("ul");
+        list.className = "vmx-values-list";
         data.values.forEach((v) => {
-          const item = document.createElement("div");
+          const item = document.createElement("li");
           item.className = "vmx-values-item";
-          item.innerHTML = `<div class="vmx-values-bullet" aria-hidden="true"></div><div><div class="vmx-values-label">${v}</div></div>`;
-          container.appendChild(item);
+          item.innerHTML = `<span class="vmx-values-label">${v}</span>`;
+          list.appendChild(item);
         });
         bodyEl.innerHTML = "";
-        bodyEl.appendChild(container);
+        bodyEl.appendChild(list);
       } else {
         bodyEl.innerHTML = "";
         bodyEl.textContent = data.body;
@@ -303,6 +304,7 @@ sectionsToAnimate.forEach((section) => {
       detail.classList.add("fade-in");
     }, 180);
   }
+
   function select(btn) {
     buttons.forEach((b) => {
       b.classList.remove("active");
@@ -324,6 +326,7 @@ sectionsToAnimate.forEach((section) => {
   });
   select(buttons[0]);
 })();
+
 
 (function () {
   const btn = document.getElementById("backToTop");
