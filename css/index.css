@@ -526,8 +526,8 @@ html {
 .about-buttons {
   display: flex;
   flex-wrap: wrap;
-  gap: 15px;            
-  margin-top: 25px;     
+  gap: 15px;
+  margin-top: 25px;
   align-items: center;
 }
 
@@ -558,15 +558,15 @@ html {
 
 .btn-download:hover,
 .btn-download:focus {
-  transform: translateY(-3px); 
-  box-shadow: 0 6px 12px rgba(44, 62, 80, 0.3); 
-  background-color: #34495e; 
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(44, 62, 80, 0.3);
+  background-color: #34495e;
   outline: none;
 }
 
 .btn-download:hover .btn-icon,
 .btn-download:focus .btn-icon {
-  transform: translateY(3px); 
+  transform: translateY(3px);
 }
 
 .btn-download::before {
@@ -576,25 +576,23 @@ html {
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(
-    120deg,
-    transparent,
-    rgba(255, 255, 255, 0.12),
-    transparent
-  );
+  background: linear-gradient(120deg,
+      transparent,
+      rgba(255, 255, 255, 0.12),
+      transparent);
   transition: left 0.6s ease;
   pointer-events: none;
 }
 
 .btn-download:hover::before,
 .btn-download:focus::before {
-  left: 100%; 
+  left: 100%;
 }
 
 .btn-download:focus-visible {
   box-shadow:
     0 6px 12px rgba(44, 62, 80, 0.18),
-    0 0 0 4px rgba(52,73,94,0.14);
+    0 0 0 4px rgba(52, 73, 94, 0.14);
 }
 
 @media (max-width: 480px) {
@@ -1059,6 +1057,7 @@ p {
   --max-width: 1100px;
   --font-main: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
+
 .vmc {
   min-height: 60vh;
   margin: 0;
@@ -1070,6 +1069,7 @@ p {
   padding: 20px;
   box-sizing: border-box;
 }
+
 .vmx-wrapper {
   width: 100%;
   max-width: var(--max-width);
@@ -1086,12 +1086,14 @@ p {
   box-sizing: border-box;
   height: auto;
 }
+
 .vmx-nav {
   display: flex;
   flex-direction: column;
   gap: 18px;
   align-items: center;
 }
+
 .vmx-card {
   background: var(--card-bg);
   border-radius: 12px;
@@ -1110,15 +1112,18 @@ p {
   min-height: 70px;
   box-sizing: border-box;
 }
+
 .vmx-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 10px 25px rgba(10, 26, 66, 0.08);
 }
+
 .vmx-card.active {
-  border: 2px solid black;
+  border: 2px solid #666;
   box-shadow: 0 14px 40px rgba(11, 61, 145, 0.12);
   transform: translateY(-6px) scale(1.02);
 }
+
 .vmx-meta {
   display: flex;
   flex-direction: column;
@@ -1126,12 +1131,14 @@ p {
   align-items: center;
   text-align: center;
 }
+
 .vmx-title {
   font-size: 18px;
   font-weight: 600;
   color: black;
   margin: 0;
 }
+
 .vmx-sub {
   font-size: 13px;
   color: var(--muted);
@@ -1139,6 +1146,7 @@ p {
   opacity: 0.95;
   line-height: 1.4;
 }
+
 .vmx-detail {
   background: transparent;
   padding: 10px;
@@ -1153,29 +1161,34 @@ p {
   margin: 0 auto;
   box-sizing: border-box;
 }
+
 .vmx-detail .headline {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 12px;
 }
+
 .vmx-detail h2 {
   color: white;
   margin: 0;
   font-size: clamp(24px, 4vw, 28px);
 }
+
 .vmx-strap {
   font-size: 15px;
   color: black;
   font-weight: 700;
   margin: 0;
 }
+
 .vmx-body {
   font-size: 16px;
   line-height: 1.65;
   color: rgb(255, 255, 255);
   max-width: 60ch;
 }
+
 .vmx-ornament {
   height: 4px;
   width: 80px;
@@ -1183,23 +1196,27 @@ p {
   background: var(--gold);
   opacity: 0.95;
 }
+
 .vmx-values-list {
   list-style: none;
   padding: 0;
   margin: 8px 0 0 0;
   display: flex;
   flex-direction: column;
+  margin-left: 80px;
   gap: 1px;
   width: 100%;
   align-items: flex-start;
 }
+
 .vmx-values-item {
   display: flex;
-  align-items: center; 
+  align-items: center;
   gap: 12px;
   text-align: left;
   white-space: nowrap;
 }
+
 .vmx-values-item::before {
   content: '»';
   font-size: 28px;
@@ -1212,31 +1229,41 @@ p {
 }
 
 @keyframes slide {
-  0% { left: 0; }
-  100% { left: 5px; }
+  0% {
+    left: 0;
+  }
+
+  100% {
+    left: 5px;
+  }
 }
+
 .vmx-values-label {
   font-weight: 500;
   color: white;
 }
+
 @media (max-width: 900px) {
   body {
     padding: 20px 10px;
     align-items: flex-start;
     min-height: 100vh;
   }
+
   .vmx-wrapper {
     grid-template-columns: 1fr;
     gap: 24px;
     padding: clamp(16px, 3vw, 24px);
     height: auto;
   }
+
   .vmx-nav {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
     gap: 16px;
   }
+
   .vmx-card {
     flex-grow: 1;
     flex-basis: 220px;
@@ -1244,10 +1271,12 @@ p {
     box-sizing: border-box;
   }
 }
+
 @media (max-width: 600px) {
   body {
     padding: 0;
   }
+
   .vmx-wrapper {
     padding: 24px 16px;
     border-radius: 0;
@@ -1258,20 +1287,25 @@ p {
     height: auto;
     box-sizing: border-box;
   }
+
   .vmx-nav {
     flex-direction: column;
     gap: 12px;
   }
+
   .vmx-card {
     flex-basis: auto;
     width: 100%;
   }
+
   .vmx-title {
     font-size: 17px;
   }
+
   .vmx-sub {
     font-size: 13px;
   }
+
   .vmx-detail {
     margin: 0;
     backdrop-filter: blur(12px);
@@ -1280,51 +1314,68 @@ p {
     border-radius: var(--radius);
     box-shadow: var(--shadow);
   }
+
   .vmx-detail h2 {
     font-size: 24px;
   }
+
   .vmx-strap {
     font-size: 15px;
   }
+
   .vmx-body {
     font-size: 15px;
   }
+
   .vmx-values-item {
-     white-space: normal; 
+    white-space: normal;
   }
 }
+
 .vmx-body strong {
   color: #000000;
 }
+
 .vmc .vmx-body {
   font-size: 15px;
   font-weight: 500;
 }
+
+.vmx-values-list {
+  margin-left: 20px;
+}
+
 .vmx-card:focus-visible {
   outline: 3px solid rgba(11, 61, 145, 0.2);
   outline-offset: 3px;
 }
+
 .vmx-detail.fade-out {
   animation: fadeOut .22s ease forwards;
 }
+
 .vmx-detail.fade-in {
   animation: fadeIn .32s ease forwards .1s;
 }
+
 @keyframes fadeOut {
   from {
     opacity: 1;
     transform: translateY(0);
   }
+
   to {
     opacity: 0;
     transform: translateY(8px);
   }
 }
+
 @keyframes fadeIn {
   from {
     opacity: 0;
     transform: translateY(8px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);

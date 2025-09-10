@@ -263,11 +263,11 @@ sectionsToAnimate.forEach((section) => {
       sub: "Principles that guide our people and processes.",
       body: null,
       values: [
-        "<strong>Quality & Reliability</strong> – Ensuring durable and dependable solutions.",
-        "<strong>Integrity & Trust</strong> – Conducting business with honesty and transparency.",
-        "<strong>Innovation</strong> – Adapting advanced technologies to meet evolving needs.",
-        "<strong>Customer Focus</strong> – Placing clients at the heart of every decision.",
-        "<strong>Excellence in Execution</strong> – Delivering on commitments with precision.",
+        "Ensuring durable and dependable solutions.",
+        "Conducting business with honesty and transparency.",
+        "Adapting advanced technologies to meet evolving needs.",
+        "Placing clients at the heart of every decision.",
+        "Delivering on commitments with precision.",
       ],
     },
   };
@@ -275,7 +275,7 @@ sectionsToAnimate.forEach((section) => {
   const buttons = Array.from(wrapper.querySelectorAll(".vmx-card"));
   const detail = document.getElementById("vmx-detail");
   const titleEl = document.getElementById("vmx-detail-title");
-  const subEl = a = document.getElementById("vmx-detail-sub");
+  const subEl = (a = document.getElementById("vmx-detail-sub"));
   const bodyEl = document.getElementById("vmx-detail-body");
 
   function render(key) {
@@ -327,7 +327,6 @@ sectionsToAnimate.forEach((section) => {
   select(buttons[0]);
 })();
 
-
 (function () {
   const btn = document.getElementById("backToTop");
   if (!btn) return;
@@ -335,7 +334,7 @@ sectionsToAnimate.forEach((section) => {
   const isScrollable = () =>
     document.documentElement.scrollHeight > window.innerHeight + 10;
 
-  const SCROLL_TRIGGER = Math.round(window.innerHeight * 0.15); 
+  const SCROLL_TRIGGER = Math.round(window.innerHeight * 0.15);
 
   function toggleBackToTop() {
     if (
